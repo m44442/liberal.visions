@@ -208,7 +208,7 @@ function Events() {
         {/* ボタン */}
         <div className="mx-auto flex-col items-center justify-center w-fit">
           <Link
-            href={"https://instagram.com"}
+            href={"https://www.instagram.com/romance.tokyo/"}
             className="duration-300 transition-all ease-in-out py-3 px-6 flex border rounded-full space-x-3 items-center
             text-body bg-slate-100 hover:border-gray-950 hover:bg-gray-700 hover:text-white"
           >
