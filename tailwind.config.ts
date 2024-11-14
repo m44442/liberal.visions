@@ -18,7 +18,14 @@ module.exports = {
         purpleLight: "#7f1184",
       },
       fontFamily: {
-        fantasy: "fantasy", 'yumin': ['"Yu Mincho"', '游明朝', 'YuMincho', '"Hiragino Mincho ProN"', 'serif']
+        fantasy: "fantasy",
+        yumin: [
+          '"Yu Mincho"',
+          "游明朝",
+          "YuMincho",
+          '"Hiragino Mincho ProN"',
+          "serif",
+        ],
       },
     },
   },

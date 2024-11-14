@@ -1,52 +1,52 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { BiChevronRight } from 'react-icons/bi';
-import { FaLocationDot } from 'react-icons/fa6';
-import { FaInstagram, FaCalendarAlt } from 'react-icons/fa';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { BiChevronRight } from "react-icons/bi";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaInstagram, FaCalendarAlt } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { HiDatabase } from "react-icons/hi";
- 
+
 const footerContent = {
   text: {
-    logo: '/images/Logo_Header.png',
+    logo: "/images/Logo_Header.png",
   },
   footerLinks: [
     {
-      heading: 'サイトマップ',
+      heading: "サイトマップ",
       links: [
         {
-          href: '#',
-          label: 'Top',
+          href: "#",
+          label: "Top",
         },
         {
-          href: '#',
-          label: 'Events',
+          href: "#",
+          label: "Events",
         },
         {
-          href: '#',
-          label: 'Projects',
+          href: "#",
+          label: "Projects",
         },
         {
-          href: '#',
-          label: 'Member',
+          href: "#",
+          label: "Member",
         },
         {
-          href: '#',
-          label: 'Recruitement',
+          href: "#",
+          label: "Recruitement",
         },
       ],
     },
-  ], 
-  
+  ],
+
   contact: {
-    heading: '会社概要',
-    description: '代表者: ヒガブ中井オマル',
+    heading: "会社概要",
+    description: "代表者: ヒガブ中井オマル",
     address: {
-      money: '資本金: 100万円',
-      street: '〒105-0022 東京都港区海岸2丁目-1-16 鈴与浜松町ビル8F',
-      esDay: '設立年月: 2024年9月24日',
-      instagram: 'https://instagram.com',
+      money: "資本金: 100万円",
+      street: "〒105-0022 東京都港区海岸2丁目-1-16 鈴与浜松町ビル8F",
+      esDay: "設立年月: 2024年9月24日",
+      instagram: "https://instagram.com",
     },
   },
 };
@@ -58,7 +58,7 @@ function Footer() {
         <div className="block lg:flex gap-20 mb-10 pb-10 text-body">
           {/* 左 */}
           <div className="w-full lg:w-4/12 mb-10 lg:mb-0 flex justify-center lg:justify-start">
-            <Link href={'#'}>
+            <Link href={"#"}>
               <Image
                 src={footerContent.text.logo}
                 width={200}
@@ -81,10 +81,10 @@ function Footer() {
                     {footerLink.links.map((link, index) => (
                       <li key={index} className="mb-3">
                         <Link
-                          href={'#'}
+                          href={"#"}
                           className="flex items-center duration-300 transition-all ease-in-out hover:text-green group"
                         >
-                          <span className='px-1 text-xl'>{link.label}</span>
+                          <span className="px-1 text-xl">{link.label}</span>
                           <span className="left-2 relative duration-300 transition-all ease-in-out opacity-0 group-hover:opacity-100 group-hover:left-3">
                             <BiChevronRight className="text-xl" />
                           </span>
@@ -121,7 +121,7 @@ function Footer() {
               </li>
               <li className="flex items-start space-x-4 mb-5 text-xl">
                 <FaInstagram className="text-3xl" />
-                <Link href='https://instagram.com' className="text-xl">
+                <Link href="https://instagram.com" className="text-xl">
                   {footerContent.contact.address.instagram}
                 </Link>
               </li>

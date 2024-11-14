@@ -1,38 +1,41 @@
-'use client';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
- 
+"use client";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const projects = {
   text: {
-    subTitle: 'PROJECT 1',
-    title: '採用コンサルティング業務',
+    subTitle: "PROJECT 1",
+    title: "採用コンサルティング業務",
     discription:
-      '私たちの採用コンサルティング業務では、企業が即戦力となるインターンを確保できるよう、現場のニーズに即したインターンシップスキームを提案・サポートしています。このスキームは、学生が実践的なスキルを習得し、ビジネスの現場で価値を発揮できるよう構築されており、企業の人材ニーズに合わせた支援を行っています。'+
-      '具体的には、選考を通じて意欲とポテンシャルを備えた学生を見極め、事業の中核にすぐに参画できるようなインターンシップ設計を提案します。インターンが実際のプロジェクトに参加し、実務を通じて課題解決や戦略立案の力を養う機会を提供し、結果として、企業側にとって即戦力となる人材を育成するための土台を提供します。'+
-      '学生インターンにとっては、キャリア形成に資する実務経験やネットワーキングの機会が得られ、企業にとっても将来の成長を支える優秀な人材のプールが形成されます。',
+      "私たちの採用コンサルティング業務では、企業が即戦力となるインターンを確保できるよう、現場のニーズに即したインターンシップスキームを提案・サポートしています。このスキームは、学生が実践的なスキルを習得し、ビジネスの現場で価値を発揮できるよう構築されており、企業の人材ニーズに合わせた支援を行っています。" +
+      "具体的には、選考を通じて意欲とポテンシャルを備えた学生を見極め、事業の中核にすぐに参画できるようなインターンシップ設計を提案します。インターンが実際のプロジェクトに参加し、実務を通じて課題解決や戦略立案の力を養う機会を提供し、結果として、企業側にとって即戦力となる人材を育成するための土台を提供します。" +
+      "学生インターンにとっては、キャリア形成に資する実務経験やネットワーキングの機会が得られ、企業にとっても将来の成長を支える優秀な人材のプールが形成されます。",
   },
   images: {
-    img1: '/images/S__45531139_0.jpg',
-    img2: '/images/S__45531141_0.jpg',
-    img3: '/images/projects4.png',
-    img5: '/images/projects5.png',
-    img4: '/images/S__45531142_0.jpg',
+    img1: "/images/S__45531139_0.jpg",
+    img2: "/images/S__45531141_0.jpg",
+    img3: "/images/projects4.png",
+    img5: "/images/projects5.png",
+    img4: "/images/S__45531142_0.jpg",
   },
 };
- 
+
 function Projects() {
   useEffect(() => {
     AOS.init({
       duration: 900,
-      easing: 'ease',
+      easing: "ease",
       once: true,
     });
   });
- 
+
   return (
-    <section id="Projects" className="py-20 max-md:py-0 bg-gradient-to-tl from-white via-gray-400 to-white">
+    <section
+      id="Projects"
+      className="py-20 max-md:py-0 bg-gradient-to-tl from-white via-gray-400 to-white"
+    >
       <div className="container px-4 mx-auto">
         <div
           className="lg:flex justify-between items-center
@@ -63,7 +66,7 @@ function Projects() {
               {projects.text.discription}
             </p>
           </div>
- 
+
           {/* 右 */}
           <div className="lg:w-6/12 space-y-2">
             {/* 上の段 */}
@@ -106,7 +109,7 @@ function Projects() {
                 </div>
               </div>
             </div>
- 
+
             {/* 下の段 */}
             <div className="flex space-x-2">
               <div className="w-4/12 ">
@@ -141,7 +144,5 @@ function Projects() {
     </section>
   );
 }
- 
 
- 
 export default Projects;

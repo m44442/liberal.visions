@@ -1,48 +1,48 @@
-'use client';
-import Image from 'next/image';
-import React, { useEffect } from 'react';
-import { FaQuoteLeft } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
- 
+"use client";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import { FaQuoteLeft } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const recruitementContent = {
   text: {
-    subTitle: 'RECRUITMENT',
-    title: '採用情報',
-    description: '求める人材',
+    subTitle: "RECRUITMENT",
+    title: "採用情報",
+    description: "求める人材",
   },
   Recruitement: [
     {
-      img: '/images/S__45629442_0.jpg',
-      name: 'イノベーション',
-      testimony:
-        'メッセージ',
+      img: "/images/S__45629442_0.jpg",
+      name: "イノベーション",
+      testimony: "メッセージ",
     },
     {
-      img: '/images/S__45629444_0.jpg',
-      name: '自由',
-      testimony:
-        'メッセージ',
+      img: "/images/S__45629444_0.jpg",
+      name: "自由",
+      testimony: "メッセージ",
     },
     {
-      img: '/images/S__45531141_0.jpg',
-      name: 'クリーン',
-      testimony:
-        'メッセージ',
+      img: "/images/S__45531141_0.jpg",
+      name: "クリーン",
+      testimony: "メッセージ",
     },
   ],
 };
- 
+
 function Recruitement() {
   useEffect(() => {
     AOS.init({
       duration: 700,
-      easing: 'ease',
+      easing: "ease",
       once: true,
     });
   });
   return (
-    <section id="Recruitement" className="py-40 bg-gradient-to-bl from-white via-gray-400 to-white">
+    <section
+      id="Recruitement"
+      className="py-40 bg-gradient-to-bl from-white via-gray-400 to-white"
+    >
       <div className="container px-4 mx-auto">
         <div className="lg:flex justify-between items-center">
           {/* 右 */}
@@ -61,27 +61,31 @@ function Recruitement() {
             >
               {recruitementContent.text.title}
             </h2>
-            <p className="text-body leading-relaxed mb-10"
-             data-aos="fade-up"
-             data-aos-delay="300">
+            <p
+              className="text-body leading-relaxed mb-10"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               {recruitementContent.text.description}
             </p>
           </div>
- 
+
           {/* 左 */}
           <div className="lg:w-8/12">
             <div className="md:flex w-full space-x-0 md:space-x-6 items-end">
               {/* ２番目だけ弾く */}
-              <div className="md:w-6/12 mb-6 md:mb-0"
-               data-aos="fade-up"
-               data-aos-delay="100">
+              <div
+                className="md:w-6/12 mb-6 md:mb-0"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 {recruitementContent.Recruitement.map((item, index) => {
                   if (index == 1) return null;
                   return (
                     <div
                       key={index}
                       className={`bg-white p-7 rounded-lg w-full ${
-                        index == 1 ? '' : 'mb-6'
+                        index == 1 ? "" : "mb-6"
                       }`}
                     >
                       <div className="flex space-x-4 items-center mb-4">
@@ -107,13 +111,14 @@ function Recruitement() {
                   );
                 })}
               </div>
- 
+
               <div className="md:w-6/12">
                 <div>
                   <div className="w-16 h-16 hidden md:block bg-yellowLight rounded-full mb-6" />
-                  <div className="bg-white p-7 rounded-lg w-full mb-6"
-                   data-aos="fade-up"
-                   data-aos-delay="400"
+                  <div
+                    className="bg-white p-7 rounded-lg w-full mb-6"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
                   >
                     <div className="flex space-x-4 items-center mb-4">
                       <div className="relative">
@@ -148,5 +153,5 @@ function Recruitement() {
     </section>
   );
 }
- 
+
 export default Recruitement;
