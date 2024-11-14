@@ -94,7 +94,7 @@ function Events() {
               {events.text.subTitle}
             </span>
             <h2
-              className="text-heading text-2xl lg:text-4xl font-bold mb-5"
+              className="text-heading text-4xl lg:text-4xl font-bold mb-5"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -214,7 +214,7 @@ function Events() {
           >
             新着イベント情報は
             <strong className="text-green px-1 font-semibold">
-              Instagramをチェック！
+              こちら
             </strong>
             <span className="text-body">|</span>
             <span className="bg-green rounded-full w-8 h-8 flex items-center justify-center">

@@ -67,7 +67,7 @@ function Navigation() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleNavClick = (
+   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {

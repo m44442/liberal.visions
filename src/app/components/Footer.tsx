@@ -1,11 +1,14 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaInstagram, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { HiDatabase } from "react-icons/hi";
+import { useRouter, usePathname } from 'next/navigation';
 
 const footerContent = {
   text: {
@@ -16,23 +19,23 @@ const footerContent = {
       heading: "サイトマップ",
       links: [
         {
-          href: "#",
+          href: "#Top",
           label: "Top",
         },
         {
-          href: "#",
+          href: "#Events",
           label: "Events",
         },
         {
-          href: "#",
+          href: "#Projects",
           label: "Projects",
         },
         {
-          href: "#",
+          href: "#Member",
           label: "Member",
         },
         {
-          href: "#",
+          href: "#Recruitement",
           label: "Recruitement",
         },
       ],
@@ -46,12 +49,34 @@ const footerContent = {
       money: "資本金: 100万円",
       street: "〒105-0022 東京都港区海岸2丁目-1-16 鈴与浜松町ビル8F",
       esDay: "設立年月: 2024年9月24日",
-      instagram: "https://instagram.com",
     },
   },
 };
 
 function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    // #で始まるリンクの処理
+    if (href.startsWith('#')) {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        // 現在のURLのハッシュを更新
+        window.history.pushState({}, '', href);
+        // スムーズスクロール
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else if (pathname !== '/') {
+        // 要素が見つからない場合はトップページに遷移
+        router.push('/' + href);
+      }
+    } else {
+      // 通常のページ遷移
+      router.push(href);
+    }
+  };
+
   return (
     <footer className="py-20 bg-white max-md:p-5">
       <div className="container px-4 mx-auto">
@@ -81,8 +106,11 @@ function Footer() {
                     {footerLink.links.map((link, index) => (
                       <li key={index} className="mb-3">
                         <Link
-                          href={"#"}
+                          href={link.href}
                           className="flex items-center duration-300 transition-all ease-in-out hover:text-green group"
+                          onClick={(e) => {
+                          handleNavClick(e, link.href);
+                          }}
                         >
                           <span className="px-1 text-xl">{link.label}</span>
                           <span className="left-2 relative duration-300 transition-all ease-in-out opacity-0 group-hover:opacity-100 group-hover:left-3">
@@ -118,12 +146,6 @@ function Footer() {
               <li className="flex items-start space-x-4 mb-5 text-xl">
                 <FaCalendarAlt className="text-3xl" />
                 <span>{footerContent.contact.address.esDay}</span>
-              </li>
-              <li className="flex items-start space-x-4 mb-5 text-xl">
-                <FaInstagram className="text-3xl" />
-                <Link href="https://instagram.com" className="text-xl">
-                  {footerContent.contact.address.instagram}
-                </Link>
               </li>
             </ul>
           </div>

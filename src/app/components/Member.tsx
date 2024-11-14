@@ -8,7 +8,7 @@ const member = {
   text: {
     position: "Founder/CEO",
     MemberName: "ヒガブ 中井 オマル",
-    EnName: "Hijab Nakai Omar",
+    EnName: "Hegab Nakai Omar",
     discription:
       "大学1年次、営業インターンとして記録的な成果を残す。その後、数々の学生団体や大型プロジェクトを率い、リーダーシップとビジョンを磨く。若い世代の課題に着目し、日本での起業を果たす。",
   },

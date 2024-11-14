@@ -35,7 +35,7 @@ function Top() {
               className="max-w-full h-auto"
             />
           </div>
-          <div className="flex justify-center items-center italic font-yumin text-sm text-black sm:text-xl md:text-xl lg:text-2xl">
+          <div className="flex justify-center items-center italic font-yumin text-black text-lg sm:text-xl md:text-2xl lg:text-3xl">
             <h1 className="text-center m-4">
               次世代リーダーと共に未来を切り開く
             </h1>
